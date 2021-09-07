@@ -6,6 +6,9 @@
 </template>
 
 <style scoped>
+nav {
+  margin-bottom: 3em;
+}
 a {
   color: #42b983;
   padding: 1em;

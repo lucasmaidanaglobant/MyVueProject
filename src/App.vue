@@ -7,7 +7,9 @@ import Header from "./components/Header.vue";
 <template>
   <div class="container">
     <Header />
-    <router-view></router-view>
+    <transition name="page-fade" mode="out-in">
+      <router-view :key="$route.path"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -20,5 +22,15 @@ import Header from "./components/Header.vue";
   max-width: 960px;
   margin: 0 auto;
   padding: 30px 20px;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.page-fade-enter,
+.page-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
 }
 </style>

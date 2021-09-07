@@ -1,4 +1,4 @@
-export interface Weather {
+export interface WeatherInterface {
   coord: Coord;
   weather?: WeatherEntity[] | null;
   base: string;
@@ -11,7 +11,8 @@ export interface Weather {
   timezone: number;
   id: number;
   name: string;
-  cod: number;
+  cod: string;
+  message: string;
 }
 export interface Coord {
   lon: number;
